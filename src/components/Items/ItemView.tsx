@@ -16,16 +16,16 @@ import { ItemProps } from "../../store/types";
 
 const ItemView: FC<ItemProps> = ({ item }) => {
   return (
-    <Item>
+    <Item role='itemTest'>
       <ItemImg>
         <img src={`../img/${item.img}`} alt={item.name} loading="lazy" />
       </ItemImg>
       <ItemContent>
         <ItemName variant="subtitle1">
-          {item.name.substring(0, 100) + "..."}
+          {item.name?.substring(0, 100) + "..."}
         </ItemName>
         <ItemDescription variant="body1">
-          {item.description.substring(0, 200) + "..."}
+          {item.description?.substring(0, 200) + "..."}
         </ItemDescription>
         <ItemKeywords variant="h6">Keywords: {item.keywords}</ItemKeywords>
       </ItemContent>

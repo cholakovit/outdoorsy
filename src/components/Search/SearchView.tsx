@@ -19,6 +19,7 @@ const SearchView = () => {
           id="filled-basic"
           label="Search: rentals, trailer ..."
           variant="filled"
+          data-testid='searchFieldTest'
           onKeyUp={(e) => {
             handleSearch((e.target as HTMLInputElement).value);
           }}

@@ -11,12 +11,19 @@ declare module "@mui/material/styles" {
         white?: string;
         iconColor?: string;
         main?: string;
+        boxWidth?: string;
       };
     };
-    outDoorsySizing?: any;
+    outDoorsySizing?: {
+      cornerRounded: string,
+      boxWidth: string
+    }
   }
   interface ThemeOptions {
-    outDoorsySizing?: {};
+    outDoorsySizing?: {
+      cornerRounded: string,
+      boxWidth: string
+    }
   }
 
   interface Palette {}

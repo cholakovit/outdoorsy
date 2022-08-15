@@ -16,10 +16,12 @@ export const Holder = styled(Box)(({ theme }) => ({
 }));
 
 export const SearchField = styled(TextField)(({ theme }) => ({
-  width: theme.outDoorsySizing.boxWidth,
+  width: theme?.outDoorsySizing?.boxWidth,
+
   backgroundColor: theme.palette.primary.black,
-  borderTopRightRadius: theme.outDoorsySizing.cornerRounded,
-  borderTopLeftRadius: theme.outDoorsySizing.cornerRounded,
+  borderTopRightRadius: theme?.outDoorsySizing?.cornerRounded,
+  borderTopLeftRadius: theme?.outDoorsySizing?.cornerRounded,
+
   "& label": {
     color: theme.palette.primary.main,
   },
