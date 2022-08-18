@@ -3,8 +3,11 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const outdoorsyApi = createApi({
   reducerPath: "outdoorsyApi",
+
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_OUTDOORSY_LOCAL }),
+
   tagTypes: ["Items"],
+  
   endpoints: (builder) => ({
     getRentels: builder.query({
       query: (searchData: any) => {

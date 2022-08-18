@@ -9,7 +9,7 @@ import { errorProps } from '../../store/types'
 
 const Error: FC<errorProps> = ({ error }) => {
 
-    return <Alert severity="error">{error}</Alert>
+    return <Alert severity="error" data-testid='errorAlert'>{error}</Alert>
 }
 
 export default Error

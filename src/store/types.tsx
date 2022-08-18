@@ -48,6 +48,7 @@ export type colorModeProps = {
   toggleColorMode?: any;
 };
 
+// for Errors
 export type errorProps = {
   error: string;
 };
@@ -61,7 +62,12 @@ export type SkeletonProps = {
 
 // for Itms
 export type ItemProps = {
-  item: any;
+  item: {
+    name: string
+    description: string
+    img: string
+    keywords: string
+  }
 };
 
 // for Pagination

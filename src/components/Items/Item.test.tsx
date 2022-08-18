@@ -1,39 +1,28 @@
 import { describe, it } from "vitest";
-import ItemView from './ItemView';
-import { render, screen, waitFor } from "@testing-library/react";
+import ItemView from "./ItemView";
+import { render, screen } from "@testing-library/react";
 
-import { rest } from 'msw'
-import { setupServer } from 'msw/node'
-
-const server = setupServer(
-  rest.get(import.meta.env.VITE_OUTDOORSY_LOCAL, (req, res, ctx) => {
-      return res(ctx.json({ name: 'Jack' }))
-  })
-)
-
-beforeAll(() => server.listen())
-afterEach(() => server.resetHandlers())
-afterAll(() => server.close())
+const item = {
+  name: "zzz",
+  img: "zzz",
+  keywords: "zzz",
+  description: "zzz",
+};
 
 describe("Testing the ItemView component", () => {
-    it("Render ItemView", async () => {
+  it("Render ItemView", () => {
+    render(<ItemView item={item} />);
 
-      const item = [
-          { 
-              name: 'zzz',
-              description: 'zzz',
-              keywords: 'zzz'
-          }
-      ]
+    const itemImg = screen.getByRole("img");
 
-      render(<ItemView item={item} />);
+    const itemName = screen.getByTestId("itemName");
+    const itemKeywords = screen.getByTestId("itemKeywords");
+    const itemDescription = screen.getByTestId("itemDescription");
 
-      const itemTest = screen.getAllByRole('itemTest');
-
-      await waitFor(() => {
-        // for some reason data is missing
-        //expect(itemTest[0]).toHaveTextContent(`Keywords: ${item[0].keywords}`);
-      })
-
-    });
+    expect(itemKeywords).toHaveTextContent("Keywords: " + item.keywords);
+    expect(itemDescription).toHaveTextContent(item.description);
+    expect(itemName).toHaveTextContent(item.name);
+    expect(itemImg).toHaveAttribute("src", `../img/${item.img}`);
+    expect(itemImg).toHaveAttribute("alt", `${item.name}`);
+  });
 });

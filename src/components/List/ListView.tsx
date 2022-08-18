@@ -27,8 +27,6 @@ const ListView = () => {
     itemsPerPage: itemsPerPage,
   });
 
-  console.log("isLoading", isLoading);
-
   //Get current data
   const indexOfLastItem: number = page * itemsPerPage;
   const indexOfFirstItem: number = indexOfLastItem - itemsPerPage;

@@ -3,8 +3,6 @@
 
 // Additional config operations on top of normal config
 
-
-
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
