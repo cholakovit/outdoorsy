@@ -23,6 +23,7 @@
 
 
 name: Node.js CI
+run-name: ${{ github.actor }} is testing out GitHub Actions Node.js CI
 
 on:
   push:
