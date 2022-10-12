@@ -28,6 +28,7 @@
 #           pr-message: 'first pull request' # optional
 
 name: Node.js CI
+run-name: ${{ github.actor }} is testing out GitHub Actions with Node env
 
 on:
   push:
