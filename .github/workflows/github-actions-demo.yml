@@ -25,11 +25,7 @@
 name: Node.js CI
 run-name: ${{ github.actor }} is testing out GitHub Actions Node.js CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
